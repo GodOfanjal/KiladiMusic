@@ -353,9 +353,9 @@ def help_button(update, context):
 
 
 @run_async
-def layla_about_callback(update, context):
+def steela_about_callback(update, context):
     query = update.callback_query
-    if query.data == "layla_":
+    if query.data == "steela_":
         query.message.edit_text(
             text=""" ℹ️ I'm *Anjal*, a powerful group management bot built to help you manage your group easily.
                  \n❍ I can restrict users.
@@ -369,7 +369,7 @@ def layla_about_callback(update, context):
                  \n❍ Support Group @NobisukiSupport
                  \n❍ Assistant @NOBISUKI_ASSISTANT
                  \nHere is the [💾Repository](https://github.com/Godofanjal/AnjalRobot).
-                 \n\nIf you have any question about Layla, let us know at .""",
+                 \n\nIf you have any question about Anjal, let us know at .""",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
