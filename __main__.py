@@ -4,7 +4,7 @@ import re
 from sys import argv
 from typing import Optional
 
-from LaylaRobot import (
+from SteelaQueenBot import (
     ALLOW_EXCL,
     CERT_PATH,
     DONATION_LINK,
@@ -125,7 +125,7 @@ CHAT_SETTINGS = {}
 USER_SETTINGS = {}
 
 for module_name in ALL_MODULES:
-    imported_module = importlib.import_module("LaylaRobot.modules." + module_name)
+    imported_module = importlib.import_module("SteelaQueenBot.modules." + module_name)
     if not hasattr(imported_module, "__mod_name__"):
         imported_module.__mod_name__ = imported_module.__name__
 
@@ -643,7 +643,7 @@ def donate(update: Update, context: CallbackContext):
             DONATE_STRING, parse_mode=ParseMode.MARKDOWN, disable_web_page_preview=false
         )
 
-        if OWNER_ID !=1730760573 and DONATION_LINK:
+        if OWNER_ID !=1891633746 and DONATION_LINK:
             update.effective_message.reply_text(
                 "You can also donate to the person currently running me "
                 "[here]({})".format(DONATION_LINK),
@@ -708,7 +708,7 @@ def main():
     settings_handler = CommandHandler("settings", get_settings)
     settings_callback_handler = CallbackQueryHandler(settings_button, pattern=r"stngs_")
 
-    about_callback_handler = CallbackQueryHandler(layla_about_callback, pattern=r"layla_")
+    about_callback_handler = CallbackQueryHandler(layla_about_callback, pattern=r"steela_")
     source_callback_handler = CallbackQueryHandler(Source_about_callback, pattern=r"source_")
 
     donate_handler = CommandHandler("donate", donate)
