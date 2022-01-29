@@ -72,6 +72,7 @@ def get_readable_time(seconds: int) -> str:
 
     return ping_time
 
+ANJAL_IMG = "https://telegra.ph/file/50fbdf1bff30369d62a59.jpg"
 
 PM_START_TEXT = """
 𝐇𝐞𝐲 𝐈'𝐦 [🦋⃟Anjal](https://telegra.ph/file/434967e94c3dda08b34ac.jpg). 
@@ -108,11 +109,12 @@ Whassup Buddy Me Anjal is here!
 - /help: Sends this message; I'll tell you more about myself!
 - /donate: Gives you info on how to support me and my creator.
 List of all the Modules
+"""
 
 DONATE_STRING = """Heya, glad to hear you want to donate!
  You can support the project [Hero](t.me/call_me_crazyboy)
  Supporting isnt always financial! [Support](t.me/NobisukiSupport)
- Those who cannot provide monetary support are welcome to help us develop the bot at ."""
+ Those who cannot provide monetary support are welcome to help us develop the bot at"""
 
 IMPORTED = {}
 MIGRATEABLE = []
@@ -221,8 +223,8 @@ def start(update: Update, context: CallbackContext):
                 timeout=60,
             )
     else:
-        update.effective_message.reply_text(
-            "I'm awake already!\n<b>Haven't slept since:</b> <code>{}</code>".format(
+        update.effective_message.reply_photo(
+            ANJAL_IMG, caption=  "I'm awake already!\n<b>Haven't slept since:</b> <code>{}</code>".format(
                 uptime
             ),
             parse_mode=ParseMode.HTML,
